@@ -1,0 +1,42 @@
+name: Compatibilité EVO
+description: IRMS ne lit plus correctement le jeu (souvent après une mise à jour du jeu).
+labels: [compatibilité]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Pour préparer ce signalement : lance le jeu, entre en piste, puis double-clique sur `DIAGNOSTIC_EVO.bat`.
+        Le fichier `irms-diagnostic.json` est créé dans le dossier d'IRMS. Le nom du pilote y est effacé ; si l'outil affiche un avertissement, ouvre le fichier et cherche ton nom avant de l'envoyer.
+  - type: input
+    id: version_jeu
+    attributes:
+      label: Version d'Assetto Corsa EVO
+      description: Affichée dans le menu principal du jeu.
+    validations:
+      required: true
+  - type: input
+    id: version_irms
+    attributes:
+      label: Version d'IRMS ému pro
+    validations:
+      required: true
+  - type: input
+    id: combinaison
+    attributes:
+      label: Voiture et circuit utilisés
+    validations:
+      required: true
+  - type: textarea
+    id: symptome
+    attributes:
+      label: Ce que tu observes
+      description: Par exemple « Données incohérentes », vitesse fausse, tours non enregistrés, voiture non reconnue.
+    validations:
+      required: true
+  - type: textarea
+    id: capture
+    attributes:
+      label: Fichier irms-diagnostic.json
+      description: Glisse le fichier ici (compresse-le en ZIP si GitHub le refuse).
+    validations:
+      required: true

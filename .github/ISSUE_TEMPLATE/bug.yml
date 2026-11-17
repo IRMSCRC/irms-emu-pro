@@ -1,0 +1,38 @@
+name: Bug
+description: Quelque chose ne fonctionne pas comme prévu.
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: Merci de prendre le temps de décrire le problème. Pour un souci apparu après une mise à jour du jeu, utilise plutôt le modèle « Compatibilité EVO ».
+  - type: textarea
+    id: actions
+    attributes:
+      label: Ce que tu as fait
+      description: Les étapes, une par ligne.
+    validations:
+      required: true
+  - type: textarea
+    id: attendu
+    attributes:
+      label: Ce que tu attendais
+    validations:
+      required: true
+  - type: textarea
+    id: obtenu
+    attributes:
+      label: Ce qui s'est passé
+      description: Message affiché, capture d'écran, texte de la fenêtre noire.
+    validations:
+      required: true
+  - type: textarea
+    id: rapport
+    attributes:
+      label: Rapport technique
+      description: Onglet Diagnostic, bouton « Copier le rapport », puis colle ici. Il ne contient ni ton nom ni tes tours.
+      render: json
+  - type: input
+    id: materiel
+    attributes:
+      label: Matériel
+      description: Volant, pédalier, et tablette si le problème la concerne.
