@@ -1,0 +1,1453 @@
+{
+ "SMEvoAssistsState": {
+  "fields": {
+   "arcade_stability_control": [
+    12,
+    4
+   ],
+   "auto_blip": [
+    1,
+    1
+   ],
+   "auto_clutch": [
+    2,
+    1
+   ],
+   "auto_clutch_on_start": [
+    3,
+    1
+   ],
+   "auto_gear": [
+    0,
+    1
+   ],
+   "auto_pit_limiter": [
+    5,
+    1
+   ],
+   "auto_steer": [
+    8,
+    4
+   ],
+   "manual_ignition_e_start": [
+    4,
+    1
+   ],
+   "place_holder": [
+    16,
+    48
+   ],
+   "standing_start_assist": [
+    6,
+    1
+   ]
+  },
+  "size": 64
+ },
+ "SMEvoDamageState": {
+  "fields": {
+   "damage_center": [
+    16,
+    4
+   ],
+   "damage_front": [
+    0,
+    4
+   ],
+   "damage_left": [
+    8,
+    4
+   ],
+   "damage_rear": [
+    4,
+    4
+   ],
+   "damage_right": [
+    12,
+    4
+   ],
+   "damage_suspension_lf": [
+    20,
+    4
+   ],
+   "damage_suspension_lr": [
+    28,
+    4
+   ],
+   "damage_suspension_rf": [
+    24,
+    4
+   ],
+   "damage_suspension_rr": [
+    32,
+    4
+   ],
+   "place_holder": [
+    36,
+    92
+   ]
+  },
+  "size": 128
+ },
+ "SMEvoElectronics": {
+  "fields": {
+   "abs_level": [
+    2,
+    1
+   ],
+   "active_performance_mode": [
+    39,
+    1
+   ],
+   "brake_bias": [
+    8,
+    4
+   ],
+   "diff_coast_level": [
+    32,
+    1
+   ],
+   "diff_power_level": [
+    31,
+    1
+   ],
+   "ebb_level": [
+    4,
+    1
+   ],
+   "engine_map_level": [
+    12,
+    1
+   ],
+   "ers_deployment_map": [
+    20,
+    1
+   ],
+   "ers_recharge_map": [
+    24,
+    4
+   ],
+   "esc_level": [
+    3,
+    1
+   ],
+   "front_bump_damper_level": [
+    33,
+    1
+   ],
+   "front_rebound_damper_level": [
+    34,
+    1
+   ],
+   "is_drs_open": [
+    30,
+    1
+   ],
+   "is_ers_heat_charging_on": [
+    28,
+    1
+   ],
+   "is_ers_overtake_mode_on": [
+    29,
+    1
+   ],
+   "is_ignition_on": [
+    37,
+    1
+   ],
+   "is_pitlimiter_on": [
+    38,
+    1
+   ],
+   "place_holder": [
+    40,
+    88
+   ],
+   "rear_bump_damper_level": [
+    35,
+    1
+   ],
+   "rear_rebound_damper_level": [
+    36,
+    1
+   ],
+   "tc_cut_level": [
+    1,
+    1
+   ],
+   "tc_level": [
+    0,
+    1
+   ],
+   "turbo_level": [
+    16,
+    4
+   ]
+  },
+  "size": 128
+ },
+ "SMEvoInstrumentation": {
+  "fields": {
+   "are_headlights_visible": [
+    26,
+    1
+   ],
+   "cockpit_light_stage": [
+    2,
+    1
+   ],
+   "direction_light_left": [
+    5,
+    1
+   ],
+   "direction_light_right": [
+    6,
+    1
+   ],
+   "display_current_page_index": [
+    10,
+    16
+   ],
+   "flashing_lights": [
+    7,
+    1
+   ],
+   "main_light_stage": [
+    0,
+    1
+   ],
+   "place_holder": [
+    27,
+    101
+   ],
+   "rain_lights": [
+    4,
+    1
+   ],
+   "selected_display_index": [
+    9,
+    1
+   ],
+   "special_light_stage": [
+    1,
+    1
+   ],
+   "warning_lights": [
+    8,
+    1
+   ],
+   "wiper_level": [
+    3,
+    1
+   ]
+  },
+  "size": 128
+ },
+ "SMEvoPitInfo": {
+  "fields": {
+   "damage": [
+    0,
+    1
+   ],
+   "fuel": [
+    1,
+    1
+   ],
+   "place_holder": [
+    6,
+    58
+   ],
+   "tyres_lf": [
+    2,
+    1
+   ],
+   "tyres_lr": [
+    4,
+    1
+   ],
+   "tyres_rf": [
+    3,
+    1
+   ],
+   "tyres_rr": [
+    5,
+    1
+   ]
+  },
+  "size": 64
+ },
+ "SMEvoSessionState": {
+  "fields": {
+   "current_lap": [
+    72,
+    4
+   ],
+   "disconnected_from_server": [
+    107,
+    1
+   ],
+   "end_session_flag": [
+    88,
+    4
+   ],
+   "is_ready_to_next_blinking": [
+    111,
+    1
+   ],
+   "lap_length_km": [
+    84,
+    4
+   ],
+   "lights_mode": [
+    80,
+    4
+   ],
+   "lights_on": [
+    76,
+    4
+   ],
+   "phase_name": [
+    0,
+    33
+   ],
+   "place_holder": [
+    113,
+    140
+   ],
+   "restart_season_enabled": [
+    108,
+    1
+   ],
+   "show_waiting_for_players": [
+    112,
+    1
+   ],
+   "time_left": [
+    33,
+    15
+   ],
+   "time_left_ms": [
+    48,
+    4
+   ],
+   "time_to_next_session": [
+    92,
+    15
+   ],
+   "total_lap": [
+    68,
+    4
+   ],
+   "ui_enable_drive": [
+    109,
+    1
+   ],
+   "ui_enable_setup": [
+    110,
+    1
+   ],
+   "wait_time": [
+    52,
+    15
+   ]
+  },
+  "size": 256
+ },
+ "SMEvoTimingState": {
+  "fields": {
+   "best_laptime": [
+    72,
+    15
+   ],
+   "current_laptime": [
+    0,
+    15
+   ],
+   "delta_current": [
+    15,
+    15
+   ],
+   "delta_current_p": [
+    32,
+    4
+   ],
+   "delta_last": [
+    51,
+    15
+   ],
+   "delta_last_p": [
+    68,
+    4
+   ],
+   "ideal_laptime": [
+    87,
+    15
+   ],
+   "is_invalid": [
+    117,
+    1
+   ],
+   "last_laptime": [
+    36,
+    15
+   ],
+   "place_holder": [
+    118,
+    137
+   ],
+   "total_time": [
+    102,
+    15
+   ]
+  },
+  "size": 256
+ },
+ "SMEvoTyreState": {
+  "fields": {
+   "brake_normalized_temperature": [
+    120,
+    4
+   ],
+   "brake_pressure": [
+    20,
+    4
+   ],
+   "brake_temperature_c": [
+    16,
+    4
+   ],
+   "lock": [
+    4,
+    1
+   ],
+   "place_holder": [
+    128,
+    128
+   ],
+   "slip": [
+    0,
+    4
+   ],
+   "tyre_compound_front": [
+    36,
+    33
+   ],
+   "tyre_compound_rear": [
+    69,
+    33
+   ],
+   "tyre_normalized_pressure": [
+    104,
+    4
+   ],
+   "tyre_normalized_temperature_center": [
+    112,
+    4
+   ],
+   "tyre_normalized_temperature_core": [
+    124,
+    4
+   ],
+   "tyre_normalized_temperature_left": [
+    108,
+    4
+   ],
+   "tyre_normalized_temperature_right": [
+    116,
+    4
+   ],
+   "tyre_pression": [
+    8,
+    4
+   ],
+   "tyre_temperature_c": [
+    12,
+    4
+   ],
+   "tyre_temperature_center": [
+    28,
+    4
+   ],
+   "tyre_temperature_left": [
+    24,
+    4
+   ],
+   "tyre_temperature_right": [
+    32,
+    4
+   ]
+  },
+  "size": 256
+ },
+ "SPageFileGraphicEvo": {
+  "fields": {
+   "abs_active": [
+    46,
+    1
+   ],
+   "active_cars": [
+    3852,
+    1
+   ],
+   "air_temperature_c": [
+    117,
+    1
+   ],
+   "assists_state": [
+    3864,
+    64
+   ],
+   "battery_is_charging": [
+    54,
+    1
+   ],
+   "battery_temperature": [
+    1468,
+    4
+   ],
+   "battery_voltage": [
+    1472,
+    4
+   ],
+   "best_laptime_ms": [
+    2400,
+    4
+   ],
+   "brake_percent": [
+    80,
+    4
+   ],
+   "car_coordinates": [
+    3124,
+    720
+   ],
+   "car_damage": [
+    1260,
+    128
+   ],
+   "car_ffb_mupliplier": [
+    100,
+    4
+   ],
+   "car_ids": [
+    3940,
+    960
+   ],
+   "car_location": [
+    1388,
+    4
+   ],
+   "car_model": [
+    3086,
+    33
+   ],
+   "clutch_percent": [
+    88,
+    4
+   ],
+   "control_lock_time": [
+    1256,
+    4
+   ],
+   "current_bhp": [
+    216,
+    4
+   ],
+   "current_km": [
+    160,
+    4
+   ],
+   "current_lap_time_ms": [
+    188,
+    4
+   ],
+   "current_pos": [
+    2388,
+    4
+   ],
+   "current_torque": [
+    212,
+    4
+   ],
+   "delta_time_ms": [
+    184,
+    4
+   ],
+   "diff_coast_raw_value": [
+    2456,
+    4
+   ],
+   "diff_power_raw_value": [
+    2460,
+    4
+   ],
+   "display_speed_kmh": [
+    58,
+    2
+   ],
+   "display_speed_mph": [
+    60,
+    2
+   ],
+   "display_speed_ms": [
+    62,
+    2
+   ],
+   "distance_to_deadline": [
+    2468,
+    4
+   ],
+   "driver_name": [
+    3020,
+    33
+   ],
+   "driver_surname": [
+    3053,
+    33
+   ],
+   "electronics": [
+    1872,
+    128
+   ],
+   "electronics_is_modifiable": [
+    2256,
+    128
+   ],
+   "electronics_max_limit": [
+    2128,
+    128
+   ],
+   "electronics_min_limit": [
+    2000,
+    128
+   ],
+   "engine_type": [
+    2416,
+    4
+   ],
+   "esc_active": [
+    47,
+    1
+   ],
+   "exhaust_temperature_c": [
+    128,
+    4
+   ],
+   "ffb_strength": [
+    96,
+    4
+   ],
+   "flag": [
+    2404,
+    4
+   ],
+   "focused_car_id_a": [
+    8,
+    8
+   ],
+   "focused_car_id_b": [
+    16,
+    8
+   ],
+   "fuel_estimated_laps": [
+    3860,
+    4
+   ],
+   "fuel_liter_current_quantity": [
+    196,
+    4
+   ],
+   "fuel_liter_current_quantity_percent": [
+    200,
+    4
+   ],
+   "fuel_liter_per_km": [
+    204,
+    4
+   ],
+   "fuel_liter_per_lap": [
+    1460,
+    4
+   ],
+   "fuel_liter_used": [
+    1456,
+    4
+   ],
+   "fuel_per_lap": [
+    3856,
+    4
+   ],
+   "fuel_pressure_bar": [
+    112,
+    4
+   ],
+   "g_forces_x": [
+    132,
+    4
+   ],
+   "g_forces_y": [
+    136,
+    4
+   ],
+   "g_forces_z": [
+    140,
+    4
+   ],
+   "gap_ahead": [
+    3844,
+    4
+   ],
+   "gap_behind": [
+    3848,
+    4
+   ],
+   "gas_percent": [
+    76,
+    4
+   ],
+   "gear_int": [
+    68,
+    2
+   ],
+   "gear_rpm_window": [
+    1484,
+    4
+   ],
+   "global_flag": [
+    2408,
+    4
+   ],
+   "handbrake_percent": [
+    84,
+    4
+   ],
+   "has_kers": [
+    2420,
+    1
+   ],
+   "instantaneous_fuel_liter_per_km": [
+    1476,
+    4
+   ],
+   "instantaneous_km_per_fuel_liter": [
+    1480,
+    4
+   ],
+   "instrumentation": [
+    1488,
+    128
+   ],
+   "instrumentation_max_limit": [
+    1744,
+    128
+   ],
+   "instrumentation_min_limit": [
+    1616,
+    128
+   ],
+   "is_change_down_rpm": [
+    44,
+    1
+   ],
+   "is_change_up_rpm": [
+    43,
+    1
+   ],
+   "is_drs_available": [
+    53,
+    1
+   ],
+   "is_engine_running": [
+    50,
+    1
+   ],
+   "is_ignition_on": [
+    49,
+    1
+   ],
+   "is_in_pit_box": [
+    3119,
+    1
+   ],
+   "is_in_pit_lane": [
+    3120,
+    1
+   ],
+   "is_last_lap": [
+    2421,
+    1
+   ],
+   "is_max_charge_kj_per_lap_reached": [
+    56,
+    1
+   ],
+   "is_max_kj_per_lap_reached": [
+    55,
+    1
+   ],
+   "is_rpm_limiter_on": [
+    42,
+    1
+   ],
+   "is_valid_lap": [
+    3121,
+    1
+   ],
+   "is_wrong_way": [
+    52,
+    1
+   ],
+   "kers_charge_perc": [
+    1248,
+    4
+   ],
+   "kers_current_perc": [
+    1252,
+    4
+   ],
+   "kers_is_charging": [
+    51,
+    1
+   ],
+   "km_per_fuel_liter": [
+    208,
+    4
+   ],
+   "laps_possible_with_fuel": [
+    1464,
+    4
+   ],
+   "last_laptime_ms": [
+    2396,
+    4
+   ],
+   "launch_active": [
+    48,
+    1
+   ],
+   "max_fuel": [
+    3928,
+    4
+   ],
+   "max_gears": [
+    2412,
+    4
+   ],
+   "max_turbo_boost": [
+    3932,
+    4
+   ],
+   "npos": [
+    1244,
+    4
+   ],
+   "oil_pressure_bar": [
+    124,
+    4
+   ],
+   "oil_temperature_c": [
+    120,
+    4
+   ],
+   "packetId": [
+    0,
+    4
+   ],
+   "performance_mode_name": [
+    2422,
+    33
+   ],
+   "pit_info": [
+    1392,
+    64
+   ],
+   "pitspeeding_delta": [
+    64,
+    4
+   ],
+   "player_car_id_a": [
+    24,
+    8
+   ],
+   "player_car_id_b": [
+    32,
+    8
+   ],
+   "player_cpu_usage": [
+    2996,
+    4
+   ],
+   "player_cpu_usage_avg": [
+    3000,
+    4
+   ],
+   "player_fps": [
+    3012,
+    4
+   ],
+   "player_fps_avg": [
+    3016,
+    4
+   ],
+   "player_latency": [
+    2992,
+    4
+   ],
+   "player_ping": [
+    2988,
+    4
+   ],
+   "player_qos": [
+    3004,
+    4
+   ],
+   "player_qos_avg": [
+    3008,
+    4
+   ],
+   "predicted_lap_time_ms": [
+    192,
+    4
+   ],
+   "race_cut_current_delta": [
+    2472,
+    4
+   ],
+   "race_cut_gained_time_ms": [
+    2464,
+    4
+   ],
+   "rpm": [
+    40,
+    2
+   ],
+   "rpm_percent": [
+    72,
+    4
+   ],
+   "session_state": [
+    2476,
+    256
+   ],
+   "status": [
+    4,
+    4
+   ],
+   "steer_degrees": [
+    156,
+    4
+   ],
+   "steering_percent": [
+    92,
+    4
+   ],
+   "tc_active": [
+    45,
+    1
+   ],
+   "time_of_day_hours": [
+    172,
+    4
+   ],
+   "time_of_day_minutes": [
+    176,
+    4
+   ],
+   "time_of_day_seconds": [
+    180,
+    4
+   ],
+   "timing_state": [
+    2732,
+    256
+   ],
+   "total_drivers": [
+    2392,
+    4
+   ],
+   "total_driving_time_s": [
+    168,
+    4
+   ],
+   "total_km": [
+    164,
+    4
+   ],
+   "total_lap_count": [
+    2384,
+    4
+   ],
+   "turbo_boost": [
+    144,
+    4
+   ],
+   "turbo_boost_level": [
+    148,
+    4
+   ],
+   "turbo_boost_perc": [
+    152,
+    4
+   ],
+   "tyre_lf": [
+    220,
+    256
+   ],
+   "tyre_lr": [
+    732,
+    256
+   ],
+   "tyre_rf": [
+    476,
+    256
+   ],
+   "tyre_rr": [
+    988,
+    256
+   ],
+   "use_single_compound": [
+    3936,
+    1
+   ],
+   "water_pressure_bar": [
+    108,
+    4
+   ],
+   "water_temperature_c": [
+    116,
+    1
+   ],
+   "water_temperature_percent": [
+    104,
+    4
+   ]
+  },
+  "size": 4900
+ },
+ "SPageFilePhysics": {
+  "fields": {
+   "P2PActivations": [
+    580,
+    4
+   ],
+   "P2PStatus": [
+    584,
+    4
+   ],
+   "abs": [
+    252,
+    4
+   ],
+   "absInAction": [
+    676,
+    4
+   ],
+   "absVibrations": [
+    796,
+    4
+   ],
+   "accG": [
+    44,
+    12
+   ],
+   "airDensity": [
+    284,
+    4
+   ],
+   "airTemp": [
+    288,
+    4
+   ],
+   "autoShifterOn": [
+    264,
+    4
+   ],
+   "ballast": [
+    280,
+    4
+   ],
+   "brake": [
+    8,
+    4
+   ],
+   "brakeBias": [
+    564,
+    4
+   ],
+   "brakeTemp": [
+    348,
+    16
+   ],
+   "brakeTorque": [
+    716,
+    16
+   ],
+   "camberRAD": [
+    168,
+    16
+   ],
+   "carDamage": [
+    224,
+    20
+   ],
+   "cgHeight": [
+    220,
+    4
+   ],
+   "clutch": [
+    364,
+    4
+   ],
+   "currentMaxRpm": [
+    588,
+    4
+   ],
+   "discLife": [
+    756,
+    16
+   ],
+   "drs": [
+    200,
+    4
+   ],
+   "drsAvailable": [
+    340,
+    4
+   ],
+   "drsEnabled": [
+    344,
+    4
+   ],
+   "engineBrake": [
+    316,
+    4
+   ],
+   "ersHeatCharging": [
+    328,
+    4
+   ],
+   "ersIsCharging": [
+    332,
+    4
+   ],
+   "ersPowerLevel": [
+    324,
+    4
+   ],
+   "ersRecoveryLevel": [
+    320,
+    4
+   ],
+   "finalFF": [
+    308,
+    4
+   ],
+   "frontBrakeCompound": [
+    732,
+    4
+   ],
+   "fuel": [
+    12,
+    4
+   ],
+   "fx": [
+    608,
+    16
+   ],
+   "fy": [
+    624,
+    16
+   ],
+   "gas": [
+    4,
+    4
+   ],
+   "gear": [
+    16,
+    4
+   ],
+   "heading": [
+    208,
+    4
+   ],
+   "ignitionOn": [
+    772,
+    4
+   ],
+   "isAIControlled": [
+    416,
+    4
+   ],
+   "isEngineRunning": [
+    780,
+    4
+   ],
+   "kerbVibration": [
+    784,
+    4
+   ],
+   "kersCharge": [
+    256,
+    4
+   ],
+   "kersCurrentKJ": [
+    336,
+    4
+   ],
+   "kersInput": [
+    260,
+    4
+   ],
+   "localAngularVel": [
+    296,
+    12
+   ],
+   "localVelocity": [
+    568,
+    12
+   ],
+   "mz": [
+    592,
+    16
+   ],
+   "numberOfTyresOut": [
+    244,
+    4
+   ],
+   "packetId": [
+    0,
+    4
+   ],
+   "padLife": [
+    740,
+    16
+   ],
+   "performanceMeter": [
+    312,
+    4
+   ],
+   "pitLimiterOn": [
+    248,
+    4
+   ],
+   "pitch": [
+    212,
+    4
+   ],
+   "rearBrakeCompound": [
+    736,
+    4
+   ],
+   "rideHeight": [
+    268,
+    8
+   ],
+   "roadTemp": [
+    292,
+    4
+   ],
+   "roadVibrations": [
+    792,
+    4
+   ],
+   "roll": [
+    216,
+    4
+   ],
+   "rpms": [
+    20,
+    4
+   ],
+   "slipAngle": [
+    656,
+    16
+   ],
+   "slipRatio": [
+    640,
+    16
+   ],
+   "slipVibrations": [
+    788,
+    4
+   ],
+   "speedKmh": [
+    28,
+    4
+   ],
+   "starterEngineOn": [
+    776,
+    4
+   ],
+   "steerAngle": [
+    24,
+    4
+   ],
+   "suspensionDamage": [
+    680,
+    16
+   ],
+   "suspensionTravel": [
+    184,
+    16
+   ],
+   "tc": [
+    204,
+    4
+   ],
+   "tcinAction": [
+    672,
+    4
+   ],
+   "turboBoost": [
+    276,
+    4
+   ],
+   "tyreContactHeading": [
+    516,
+    48
+   ],
+   "tyreContactNormal": [
+    468,
+    48
+   ],
+   "tyreContactPoint": [
+    420,
+    48
+   ],
+   "tyreCoreTemperature": [
+    152,
+    16
+   ],
+   "tyreDirtyLevel": [
+    136,
+    16
+   ],
+   "tyreTemp": [
+    696,
+    16
+   ],
+   "tyreTempI": [
+    368,
+    16
+   ],
+   "tyreTempM": [
+    384,
+    16
+   ],
+   "tyreTempO": [
+    400,
+    16
+   ],
+   "tyreWear": [
+    120,
+    16
+   ],
+   "velocity": [
+    32,
+    12
+   ],
+   "waterTemp": [
+    712,
+    4
+   ],
+   "wheelAngularSpeed": [
+    104,
+    16
+   ],
+   "wheelLoad": [
+    72,
+    16
+   ],
+   "wheelSlip": [
+    56,
+    16
+   ],
+   "wheelsPressure": [
+    88,
+    16
+   ]
+  },
+  "size": 800
+ },
+ "SPageFileStaticEvo": {
+  "fields": {
+   "ac_evo_version": [
+    15,
+    15
+   ],
+   "event_id": [
+    69,
+    1
+   ],
+   "is_online": [
+    86,
+    1
+   ],
+   "is_static_weather": [
+    84,
+    1
+   ],
+   "is_timed_race": [
+    85,
+    1
+   ],
+   "latitude": [
+    132,
+    4
+   ],
+   "longitude": [
+    128,
+    4
+   ],
+   "nation": [
+    92,
+    33
+   ],
+   "number_of_sessions": [
+    88,
+    4
+   ],
+   "session": [
+    32,
+    4
+   ],
+   "session_id": [
+    70,
+    1
+   ],
+   "session_name": [
+    36,
+    33
+   ],
+   "sm_version": [
+    0,
+    15
+   ],
+   "starting_ambient_temperature_c": [
+    76,
+    4
+   ],
+   "starting_grip": [
+    72,
+    4
+   ],
+   "starting_ground_temperature_c": [
+    80,
+    4
+   ],
+   "track": [
+    136,
+    33
+   ],
+   "track_configuration": [
+    169,
+    33
+   ],
+   "track_length_m": [
+    204,
+    4
+   ]
+  },
+  "size": 208
+ }
+}

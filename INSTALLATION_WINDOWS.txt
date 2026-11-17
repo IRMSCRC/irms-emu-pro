@@ -1,0 +1,254 @@
+﻿IRMS ému pro 3.0.0 - GUIDE D'INSTALLATION POUR WINDOWS
+=======================================================
+
+Ce guide avance une action à la fois. Fais chaque étape, vérifie le
+résultat indiqué, puis passe à la suivante.
+
+Durée : environ 10 minutes la première fois.
+Il te faut : un PC sous Windows 10 ou 11 et une connexion Internet
+(uniquement pour télécharger Python, une seule fois).
+
+
+PARTIE 1 - INSTALLER PYTHON (une seule fois)
+--------------------------------------------
+
+Python est le programme gratuit qui fait fonctionner IRMS.
+
+Étape 1.1
+  Ouvre ton navigateur et va à l'adresse :
+  https://www.python.org/downloads/windows/
+
+Étape 1.2
+  Clique sur le lien de la dernière version stable
+  ("Latest Python 3 Release").
+
+Étape 1.3
+  En bas de la page, clique sur "Windows installer (64-bit)".
+  Résultat attendu : un fichier python-3.xx.x-amd64.exe se télécharge.
+
+Étape 1.4
+  Ouvre le fichier téléchargé.
+
+Étape 1.5 (IMPORTANT)
+  En bas de la fenêtre d'installation, coche la case
+  "Add python.exe to PATH".
+  Sans cette case, IRMS ne trouvera pas Python.
+
+Étape 1.6
+  Clique sur "Install Now" et attends la fin.
+  Résultat attendu : le message "Setup was successful".
+
+Étape 1.7
+  Clique sur "Close".
+
+
+PARTIE 2 - PLACER IRMS SUR LE PC
+--------------------------------
+
+Étape 2.1
+  Fais un clic droit sur le fichier ZIP d'IRMS, puis choisis
+  "Extraire tout...".
+
+Étape 2.2
+  Choisis un emplacement simple, par exemple Documents, puis clique
+  sur "Extraire".
+  Résultat attendu : un dossier IRMS-emu-pro-3.0.0 qui contient
+  notamment DEMARRER_IRMS.bat et ce guide.
+
+  Remarque : ne lance pas IRMS depuis l'intérieur du ZIP. Il doit être
+  extrait d'abord.
+
+
+PARTIE 3 - PREMIER ESSAI SANS LE JEU (conseillé)
+------------------------------------------------
+
+Cet essai confirme que tout est bien installé, avec des tours simulés.
+
+Étape 3.1
+  Dans le dossier IRMS, double-clique sur DEMARRER_DEMO.bat.
+
+  Si Windows affiche "Windows a protégé votre ordinateur" :
+  clique sur "Informations complémentaires", puis sur "Exécuter quand
+  même". Ce message apparaît pour tout fichier .bat téléchargé.
+
+  Résultat attendu : une fenêtre noire s'ouvre, puis ton navigateur
+  affiche IRMS ému pro avec un circuit de démonstration.
+
+Étape 3.2
+  Parcours les onglets Direct, Analyse, Coaching, Tours, Diagnostic.
+
+Étape 3.3
+  Dans l'onglet Diagnostic, clique sur "Démo Roadster Cup".
+  Résultat attendu : IRMS annonce la nouvelle voiture et bascule sur
+  son profil. C'est ce qui se passera avec les voitures du jeu.
+
+Étape 3.4
+  Pour arrêter : ferme la fenêtre noire.
+
+  Les tours de démonstration sont rangés à part. Ils ne se mélangent
+  jamais avec tes vrais tours.
+
+
+PARTIE 4 - UTILISER IRMS AVEC ASSETTO CORSA EVO
+-----------------------------------------------
+
+Étape 4.1
+  Double-clique sur DEMARRER_IRMS.bat.
+  Résultat attendu : la fenêtre noire s'ouvre et le navigateur affiche
+  IRMS avec l'indicateur "En attente du jeu" en haut à droite. C'est
+  normal : le jeu n'est pas encore lancé.
+
+Étape 4.2
+  Déplace la fenêtre du navigateur sur ton deuxième écran.
+
+Étape 4.3
+  Lance Assetto Corsa EVO.
+
+Étape 4.4
+  Choisis ta voiture et ton circuit, puis entre en piste.
+  Résultat attendu : en haut à droite d'IRMS, l'indicateur passe à
+  "Connecté · en piste" et le nom de la voiture et du circuit
+  s'affiche.
+  Tu n'as rien à choisir dans IRMS : la voiture est lue dans le jeu.
+
+Étape 4.5
+  Fais un tour de lancement, puis un premier tour complet.
+  Le tour en cours au moment où tu entres en piste n'est jamais
+  enregistré, car il est incomplet.
+  Résultat attendu : après le premier tour complet, le plan du circuit
+  apparaît avec les virages numérotés.
+
+Étape 4.6
+  Roule au moins trois tours valides (sans sortie de piste).
+  Résultat attendu : l'onglet Coaching affiche tes points faibles.
+
+Étape 4.7
+  Quand tu changes de voiture ou de circuit dans le jeu, ne touche à
+  rien : IRMS ouvre le profil correspondant tout seul.
+
+Étape 4.8
+  En fin de séance, ferme la fenêtre noire. Tes tours sont déjà
+  enregistrés.
+
+  Conseil : si le jeu se réduit quand tu cliques sur le deuxième écran,
+  règle le jeu en mode fenêtré sans bordure dans ses options vidéo.
+
+
+PARTIE 5 - AFFICHER IRMS SUR L'IPAD (facultatif)
+------------------------------------------------
+
+L'iPad et le PC doivent être connectés au même réseau (même box).
+
+Étape 5.1
+  Si IRMS est déjà lancé, ferme sa fenêtre noire.
+
+Étape 5.2
+  Double-clique sur DEMARRER_IPAD.bat.
+
+Étape 5.3
+  Si Windows affiche une alerte du pare-feu à propos de Python :
+  coche "Réseaux privés", puis clique sur "Autoriser l'accès".
+  Ne coche pas "Réseaux publics".
+
+Étape 5.4
+  Dans la fenêtre noire, repère la ligne qui commence par
+  "Sur l'iPad". Elle ressemble à :
+  http://192.168.1.25:8765/?vue=ipad
+  (les chiffres seront différents chez toi). La même adresse est
+  affichée dans l'onglet Diagnostic.
+
+Étape 5.5
+  Sur l'iPad, ouvre Safari et tape cette adresse exactement.
+  Résultat attendu : la vue simplifiée s'affiche (écart, prochain
+  virage, vitesse, plan).
+
+Étape 5.6
+  Pour la mettre en plein écran : touche le bouton de partage de
+  Safari, puis "Sur l'écran d'accueil". Ouvre ensuite IRMS depuis
+  l'icône créée.
+
+  L'iPad est en lecture seule : il ne peut ni supprimer ni modifier
+  tes tours. Pour empêcher l'iPad de se mettre en veille : Réglages,
+  Luminosité et affichage, Verrouillage automatique, Jamais.
+
+
+PARTIE 6 - OÙ SONT MES DONNÉES ?
+--------------------------------
+
+Tes tours sont dans un seul fichier :
+  %LOCALAPPDATA%\IRMS-emu-pro\irms.sqlite
+
+Pour ouvrir ce dossier : appuie sur les touches Windows + R, tape
+  %LOCALAPPDATA%\IRMS-emu-pro
+puis appuie sur Entrée.
+
+- Sauvegarde : copie le fichier irms.sqlite ailleurs (IRMS fermé).
+- Mise à jour d'IRMS : remplace le dossier du programme par le
+  nouveau. Tes tours ne sont pas dans ce dossier, ils sont conservés.
+- Désinstallation : supprime le dossier du programme, puis le dossier
+  %LOCALAPPDATA%\IRMS-emu-pro si tu veux aussi effacer tes tours.
+
+Rien n'est envoyé sur Internet. Ton nom de pilote n'est jamais
+enregistré.
+
+
+PARTIE 7 - EN CAS DE PROBLÈME
+-----------------------------
+
+"Python n'est pas installé" alors que tu l'as installé
+  La case "Add python.exe to PATH" n'a pas été cochée (étape 1.5).
+  Relance l'installateur de Python, choisis "Modify", clique sur
+  "Next", coche "Add Python to environment variables", puis
+  "Install". Relance ensuite le fichier .bat.
+
+La fenêtre noire s'ouvre mais pas le navigateur
+  Ouvre ton navigateur et tape : http://127.0.0.1:8765/
+
+"Impossible d'ouvrir le port 8765"
+  IRMS est déjà lancé dans une autre fenêtre noire. Ferme-la, puis
+  relance.
+
+IRMS reste sur "En attente du jeu" alors que tu roules
+  1. Vérifie que tu as lancé DEMARRER_IRMS.bat et non DEMARRER_DEMO.bat.
+  2. Vérifie que le jeu et IRMS sont lancés avec les mêmes droits : si
+     le jeu est lancé "en tant qu'administrateur", Windows peut refuser
+     à IRMS l'accès à ses données. Lance le jeu normalement, depuis
+     Steam.
+  3. Reste en piste et double-clique sur DIAGNOSTIC_EVO.bat.
+     Ouvre l'onglet Diagnostic d'IRMS et lis le message affiché.
+
+IRMS affiche "Données incohérentes" ou "Enregistrement suspendu"
+  Le jeu a probablement été mis à jour et la forme de ses données a
+  changé. IRMS arrête alors d'enregistrer pour ne pas produire de
+  faux tours.
+  1. Vérifie s'il existe une version plus récente d'IRMS.
+  2. Sinon, reste en piste, double-clique sur DIAGNOSTIC_EVO.bat et
+     joins le fichier irms-diagnostic.json à un signalement sur la
+     page GitHub du projet.
+
+Le plan du circuit n'apparaît pas
+  Il faut un tour complet, du passage de la ligne au passage suivant.
+  Un tour avec retour au stand ou téléportation n'est pas utilisé.
+
+L'iPad n'affiche rien
+  1. Vérifie que tu as lancé DEMARRER_IPAD.bat (et non DEMARRER_IRMS).
+  2. Vérifie que l'iPad est sur le même Wi-Fi que le PC, et pas sur un
+     réseau "invité".
+  3. Vérifie l'adresse : elle commence par http:// et non https://
+  4. Reprends l'étape 5.3 (pare-feu Windows).
+
+Le temps d'un tour diffère légèrement de celui du jeu
+  IRMS utilise le temps officiel du jeu quand il est disponible. Sinon
+  il mesure lui-même le temps au passage de la ligne ; la colonne
+  "Tour" indique alors "temps mesure" au lieu de "temps jeu".
+
+
+PARTIE 8 - POUR ALLER PLUS LOIN
+-------------------------------
+
+- README.md : présentation complète.
+- docs\COACHING.md : comment les conseils sont calculés.
+- docs\CONNECTEUR_EVO.md : comment IRMS lit le jeu.
+- docs\PUBLIER_SUR_GITHUB.md : mettre le projet en ligne.
+
+Bonne séance.

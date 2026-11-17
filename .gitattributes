@@ -1,2 +1,7 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+* text=auto eol=lf
+# Fichiers Windows : enregistres tels quels avec des fins de ligne CRLF,
+# pour que "Download ZIP" sur GitHub donne des lanceurs qui fonctionnent.
+*.bat -text
+INSTALLATION_WINDOWS.txt -text
+*.png binary
+*.hex text eol=lf

@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="fr" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="IRMS">
+<meta name="color-scheme" content="light dark">
+<title>IRMS ému pro</title>
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon.svg">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="backdrop" aria-hidden="true"><i></i><i></i><i></i></div>
+
+<header class="bar glass">
+  <a class="brand" href="#direct" data-tab="direct" aria-label="IRMS ému pro, accueil">
+    <svg viewBox="0 0 32 32" width="30" height="30" aria-hidden="true">
+      <rect x="1" y="1" width="30" height="30" rx="9" fill="currentColor" opacity=".12"/>
+      <path d="M8 23c0-7 4-7 8-7s8 0 8-7" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+      <circle cx="24" cy="9" r="2.6" fill="var(--accent)"/>
+    </svg>
+    <span class="brand-name">IRMS <em>ému pro</em></span>
+    <span class="chip" id="version">3.0</span>
+  </a>
+  <nav class="tabs" role="tablist" aria-label="Vues">
+    <button role="tab" data-tab="direct" aria-selected="true">Direct</button>
+    <button role="tab" data-tab="analyse">Analyse</button>
+    <button role="tab" data-tab="coaching">Coaching</button>
+    <button role="tab" data-tab="tours">Tours</button>
+    <button role="tab" data-tab="diagnostic">Diagnostic</button>
+  </nav>
+  <div class="bar-right">
+    <span class="conn" id="conn" data-state="off"><i></i><span id="conn-text">Connexion…</span></span>
+    <button class="icon-btn" id="btn-ipad" title="Vue iPad (affichage simplifié)" aria-label="Basculer la vue iPad">
+      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="18" cy="12" r="1" fill="currentColor"/></svg>
+    </button>
+    <button class="icon-btn" id="btn-theme" title="Thème clair ou sombre" aria-label="Changer de thème">
+      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+</header>
+
+<div class="context glass" id="context">
+  <label class="field">
+    <span>Profil voiture + circuit</span>
+    <select id="combo-select" aria-label="Profil voiture et circuit"></select>
+  </label>
+  <label class="check" title="Change automatiquement de profil quand le jeu signale une autre voiture ou un autre circuit">
+    <input type="checkbox" id="follow" checked> <span>Suivre le jeu</span>
+  </label>
+  <div class="kpis" id="kpis"></div>
+</div>
+
+<main id="main">
+  <!-- DIRECT -->
+  <section class="view" id="view-direct" data-view="direct">
+    <div class="grid-live">
+      <div class="panel glass map-panel">
+        <div class="panel-head">
+          <h2 id="live-title">En attente du jeu</h2>
+          <span class="muted" id="live-sub"></span>
+        </div>
+        <div class="canvas-wrap map-wrap"><canvas id="live-map" aria-label="Plan du circuit en direct"></canvas>
+          <div class="empty" id="live-map-empty"></div></div>
+        <div class="legend" id="live-legend">
+          <span><i class="sw sw-brake"></i>Freinage de référence</span>
+          <span><i class="sw sw-gas"></i>Plein gaz</span>
+          <span><i class="sw sw-part"></i>Gaz partiels</span>
+          <span><i class="sw sw-coast"></i>Roue libre</span>
+          <span><i class="sw sw-car"></i>Ta voiture</span>
+        </div>
+      </div>
+      <div class="live-side">
+        <div class="panel glass cue" id="cue" data-phase="">
+          <div class="cue-top"><span class="cue-name" id="cue-name">—</span><span class="cue-dir" id="cue-dir"></span></div>
+          <div class="cue-action" id="cue-action">Roule un tour valide</div>
+          <div class="cue-bar"><i id="cue-bar"></i></div>
+          <div class="cue-meta" id="cue-meta">Le repère de freinage apparaît dès qu'un tour de référence existe.</div>
+        </div>
+        <div class="panel glass delta-panel">
+          <div class="label">Écart au tour de référence</div>
+          <div class="delta" id="delta">—</div>
+          <div class="times">
+            <div><span>Tour en cours</span><b id="t-cur">—</b></div>
+            <div><span>Dernier tour</span><b id="t-last">—</b></div>
+            <div><span>Référence</span><b id="t-ref">—</b></div>
+          </div>
+          <div class="lapstate" id="lapstate"></div>
+        </div>
+        <div class="panel glass dash">
+          <div class="speed"><b id="speed">0</b><span>km/h</span></div>
+          <div class="gear" id="gear">N</div>
+          <div class="refspeed"><span>Réf.</span><b id="refspeed">—</b></div>
+          <div class="rpm"><i id="rpm"></i></div>
+          <div class="pedals">
+            <div class="pedal"><span>Frein</span><div class="pbar brake"><i id="p-brake"></i></div><b id="v-brake">0</b></div>
+            <div class="pedal"><span>Gaz</span><div class="pbar gas"><i id="p-gas"></i></div><b id="v-gas">0</b></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ANALYSE -->
+  <section class="view" id="view-analyse" data-view="analyse" hidden>
+    <div class="toolbar glass">
+      <label class="field"><span>Tour étudié</span><select id="lap-select" aria-label="Tour à comparer"></select></label>
+      <div class="seg" id="map-mode" role="group" aria-label="Couleur du tracé">
+        <button data-mode="drive" aria-pressed="true">Pilotage</button>
+        <button data-mode="speed">Vitesse</button>
+        <button data-mode="delta">Écart</button>
+      </div>
+      <button class="btn" id="btn-fullap" hidden>Revenir au tour complet</button>
+      <span class="readout" id="readout"></span>
+    </div>
+    <div class="grid-analyse">
+      <div class="panel glass map-panel">
+        <div class="panel-head"><h2>Plan du circuit</h2><span class="muted" id="map-note"></span></div>
+        <div class="canvas-wrap map-wrap"><canvas id="map" aria-label="Plan du circuit, zones de freinage et d'accélération"></canvas>
+          <div class="empty" id="map-empty"></div></div>
+        <div class="legend" id="map-legend"></div>
+      </div>
+      <div class="panel glass charts-panel">
+        <div class="panel-head"><h2>Télémétrie par distance</h2><span class="muted" id="chart-note"></span></div>
+        <div class="chart-label">Vitesse (km/h)</div>
+        <div class="canvas-wrap chart tall"><canvas id="ch-speed" aria-label="Vitesse en fonction de la distance"></canvas></div>
+        <div class="chart-label">Gaz et frein (%)</div>
+        <div class="canvas-wrap chart"><canvas id="ch-pedals" aria-label="Gaz et frein en fonction de la distance"></canvas></div>
+        <div class="chart-label">Écart cumulé (s) — au-dessus de zéro : tu perds du temps</div>
+        <div class="canvas-wrap chart"><canvas id="ch-delta" aria-label="Écart cumulé en fonction de la distance"></canvas></div>
+      </div>
+    </div>
+    <div class="panel glass">
+      <div class="panel-head"><h2>Virages et tronçons</h2>
+        <span class="muted">Un tronçon par virage, freinage compris. Clique une ligne pour zoomer ; double-clique un nom pour le changer.</span></div>
+      <div class="table-wrap"><table class="table" id="corner-table"></table></div>
+    </div>
+  </section>
+
+  <!-- COACHING -->
+  <section class="view" id="view-coaching" data-view="coaching" hidden>
+    <div class="panel glass coach-head" id="coach-head"></div>
+    <div class="cards" id="coach-cards"></div>
+    <div class="panel glass note">
+      <h3>Comment lire ces conseils</h3>
+      <p>La cible est ton propre meilleur passage dans chaque virage, avec cette voiture. <b>Constat</b> : ce que mesurent les données. <b>Hypothèse</b> : l'explication la plus probable, à vérifier au volant. <b>Exercice</b> : une seule consigne à essayer sur quelques tours. Aucun conseil ne remplace ton ressenti : si un exercice dégrade ta sortie de virage, reviens en arrière.</p>
+      <div class="pedal-choice">
+        <span>Ton pédalier de frein :</span>
+        <div class="seg" id="pedals-seg" role="group" aria-label="Type de pédalier">
+          <button data-pedals="position">Capteur de position</button>
+          <button data-pedals="loadcell">Cellule de charge</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOURS -->
+  <section class="view" id="view-tours" data-view="tours" hidden>
+    <div class="grid-tours">
+      <div class="panel glass">
+        <div class="panel-head"><h2>Tours enregistrés</h2>
+          <span class="actions">
+            <button class="btn" id="btn-import">Importer un tour</button>
+            <input type="file" id="file-import" accept=".json,application/json" hidden>
+          </span></div>
+        <div class="table-wrap"><table class="table" id="lap-table"></table></div>
+      </div>
+      <div class="side-col">
+        <div class="panel glass" id="profile-card"></div>
+        <div class="panel glass danger-zone">
+          <h3>Profil</h3>
+          <p class="muted">Supprime ce profil et tous ses tours. Action définitive.</p>
+          <button class="btn danger" id="btn-del-combo">Supprimer ce profil</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIAGNOSTIC -->
+  <section class="view" id="view-diagnostic" data-view="diagnostic" hidden>
+    <div class="grid-diag">
+      <div class="panel glass" id="diag-status"></div>
+      <div class="panel glass" id="diag-ipad"></div>
+      <div class="panel glass diag-report">
+        <div class="panel-head"><h2>Rapport technique</h2>
+          <span class="actions"><button class="btn" id="btn-copy-report">Copier le rapport</button>
+          <button class="btn" id="btn-refresh-report">Actualiser</button></span></div>
+        <p class="muted">À joindre à un signalement sur GitHub. Il ne contient ni ton nom de pilote ni tes tours.</p>
+        <pre id="diag-report" tabindex="0"></pre>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- VUE IPAD -->
+<section class="ipad" id="ipad" hidden>
+  <div class="ipad-top">
+    <div class="ipad-id"><b id="i-car">—</b><span id="i-track"></span></div>
+    <span class="conn" id="i-conn" data-state="off"><i></i><span id="i-conn-text">Connexion…</span></span>
+    <button class="btn" id="btn-ipad-exit">Vue complète</button>
+  </div>
+  <div class="ipad-grid">
+    <div class="glass i-delta"><div class="label">Écart</div><div class="delta" id="i-delta">—</div>
+      <div class="i-times"><div><span>Tour</span><b id="i-cur">—</b></div><div><span>Dernier</span><b id="i-last">—</b></div><div><span>Réf.</span><b id="i-ref">—</b></div></div></div>
+    <div class="glass i-cue cue" id="i-cue" data-phase="">
+      <div class="cue-top"><span class="cue-name" id="i-cue-name">—</span><span class="cue-dir" id="i-cue-dir"></span></div>
+      <div class="cue-action" id="i-cue-action">—</div>
+      <div class="cue-bar"><i id="i-cue-bar"></i></div>
+      <div class="cue-meta" id="i-cue-meta"></div></div>
+    <div class="glass i-dash">
+      <div class="i-speed"><b id="i-speed">0</b><span>km/h</span></div>
+      <div class="gear" id="i-gear">N</div>
+      <div class="rpm"><i id="i-rpm"></i></div>
+      <div class="i-pedals"><div class="pbar brake"><i id="i-brake"></i></div><div class="pbar gas"><i id="i-gas"></i></div></div>
+    </div>
+    <div class="glass i-map"><div class="canvas-wrap"><canvas id="i-map" aria-label="Plan du circuit"></canvas></div></div>
+  </div>
+</section>
+
+<div class="toasts" id="toasts" aria-live="polite"></div>
+<script src="app.js"></script>
+</body>
+</html>

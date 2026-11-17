@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "irms-emu-pro"
+dynamic = ["version"]
+description = "Télémétrie et coaching local pour Assetto Corsa EVO : plan du circuit, repères de freinage, écarts par virage, conseils adaptés à la voiture."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Les contributeurs d'IRMS ému pro" }]
+keywords = ["assetto corsa evo", "sim racing", "telemetry", "coaching", "shared memory"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Web Environment",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: French",
+    "Operating System :: Microsoft :: Windows",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Games/Entertainment :: Simulation",
+]
+dependencies = []
+
+[project.scripts]
+irms = "irms.__main__:main"
+
+[tool.setuptools]
+packages = ["irms"]
+
+[tool.setuptools.dynamic]
+version = { attr = "irms.__version__" }
+
+[tool.setuptools.package-data]
+irms = ["web/*"]
