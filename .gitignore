@@ -18,3 +18,8 @@ Thumbs.db
 irms-diagnostic.json
 /essai/
 /data/
+/.venv-build-irms-301/
+/build/
+/dist/
+/IRMS-emu-pro.exe
+__pycache__/

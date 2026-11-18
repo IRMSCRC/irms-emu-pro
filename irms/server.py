@@ -302,6 +302,17 @@ class Handler(BaseHTTPRequestHandler):
                 return self._stream()
             if path == "/api/live.json":
                 return self._json(app.engine.live())
+            if path == "/api/assistant":
+                from .assistant_plan import build_plan
+                raw = query.get("combo", [None])[0]
+                if raw is not None and (not raw.isascii() or not raw.isdigit() or len(raw) > 18):
+                    raise ApiError(400, "Identifiant de profil invalide.")
+                combo_id = int(raw) if raw is not None else app.engine.combo_id
+                if combo_id is None:
+                    return self._json(build_plan({}, {}))
+                analysis = app._analysis(combo_id)
+                pedals = app.storage.setting("pedals", "position")
+                return self._json(build_plan(analysis.overview(), analysis.coaching_view(pedals), pedals))
             if path == "/api/combos":
                 return self._json(app.combos())
             if path == "/api/doctor":

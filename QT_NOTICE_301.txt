@@ -1,0 +1,10 @@
+Prototype source IRMS 3.0.1. Le lanceur utilise PySide6 / Qt 6.8.3.
+https://doc.qt.io/qtforpython-6/licenses.html
+Qt/PySide6 ne sont pas relicencies sous la licence MIT d'IRMS. Lire les termes
+applicables avant toute redistribution du binaire : LGPL/GPL ou licence
+commerciale selon les composants et les conditions retenues. Fournir les
+notices, textes de licence et sources correspondantes lorsque requis et
+respecter les droits de modification/re-liaison. Onefile ne supprime pas
+ces obligations. Ce kit ne constitue pas une distribution juridiquement
+complete ni une licence commerciale. Validation locale seulement avant
+revision des obligations de redistribution.
